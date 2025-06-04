@@ -64,5 +64,6 @@ footer {color: var(--font-color);}
 #github-repo {color: var(--accent-color);}
 #github-repo:hover {color: var(--font-color);}
 
+#social-link {margin-left: 1rem;}
 #social-link:hover {color: var(--accent-color);} /* Social links */
 
