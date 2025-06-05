@@ -17,6 +17,7 @@
     --border-color: #7389f4;
     --font-color: rgb(255, 255, 255);
     --default-width: 50%;
+    
 }
 
 /* Bottom value */
@@ -46,7 +47,6 @@ header {color: var(--font-color);}
 
 /* Main */
 #main-div{
-    color: var(--font-color);
     width: var(--default-width);
 }
 
@@ -67,3 +67,15 @@ footer {color: var(--font-color);}
 #social-link {margin-left: 1rem;}
 #social-link:hover {color: var(--accent-color);} /* Social links */
 
+#frame-div {
+    /* class="bg-zinc-800 h-fit bg-cover flex flex-row justify-center items-center" */
+    --tw-bg-opacity:1;
+    background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1)) /* #27272a */;
+    height:fit-content;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color: var(--font-color);
+}
