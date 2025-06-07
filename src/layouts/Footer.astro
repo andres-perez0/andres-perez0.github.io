@@ -2,17 +2,19 @@
 import {Icon} from 'astro-icon/components';
 
 const {currentYear} = Astro.props;
+const icon_height=30;
 ---
 
-<footer class="bg-zinc-900 bottom-0 left-0 w-full flex justify-between items-center p-4">
-    <div id="trademark"class="flex-grow text-center font-thin">
+<footer>
+    <div id="trademark">
         made with astro and tailwindCSS. check out the <a id="github-repo" href="https://github.com/andres-perez0/andres-perez0.github.io">github</a> here. @Andres Perez 2024-{currentYear}
     </div>
     <!-- Social Links -->
-    <nav class="icons flex items-center">
-        <a id="social-link" href="https://github.com/andres-perez0/"                class="inline-block"><Icon name="mdi:github"    size={30}></Icon></a>
-        <a id="social-link" href="https://www.linkedin.com/in/andres-perez0/"       class="inline-block"><Icon name="mdi:linkedin"  size={30}></Icon></a>
-        <a id="social-link" href="https://www.instagram.com/chitoperez1990/"        class="inline-block"><Icon name="mdi:instagram" size={30}></Icon></a>
-        <a id="social-link" href="https://discordapp.com/users/659599215101476874"  class="inline-block"><Icon name="mdi:discord"   size={30}></Icon></a>
+    <nav id="social-link" class="icons flex items-center">
+        <a href="https://github.com/andres-perez0/"               ><Icon name="mdi:github"    size={icon_height}></Icon></a>
+        <a href="https://www.linkedin.com/in/andres-perez0/"      ><Icon name="mdi:linkedin"  size={icon_height}></Icon></a>
+        <a href="https://www.instagram.com/chitoperez1990/"       ><Icon name="mdi:instagram" size={icon_height}></Icon></a>
+        <a href="https://discordapp.com/users/659599215101476874" ><Icon name="mdi:discord"   size={icon_height}></Icon></a>
+        <a href="mailto:aperez26@nd.edu" ><Icon name="mdi:email"   size={icon_height}></Icon></a>
     </nav>
 </footer>

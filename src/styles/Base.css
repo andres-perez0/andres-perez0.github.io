@@ -59,13 +59,39 @@ header {color: var(--font-color);}
 #miguel-tag {color: #D8C787;}
 
 /* Footer */
-footer {color: var(--font-color);}
+footer {
+    /* "bg-zinc-900 bottom-0 left-0 w-full flex justify-between items-center p-4 */
+    color: var(--font-color);
+    --tw-bg-opacity: 1;
+    background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1)) /* #18181b */;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 1rem;}
+
+#trademark {
+    flex-grow: 1;
+    text-align: center;
+    font-weight:100;}
 
 #github-repo {color: var(--accent-color);}
-#github-repo:hover {color: var(--font-color);}
+#github-repo:hover {
+    color: var(--font-color);
+    font-size: 1.1rem;}
 
-#social-link {margin-left: 1rem;}
-#social-link:hover {color: var(--accent-color);} /* Social links */
+/* Social links */
+#social-link > a {
+    display:flex;
+    align-items: center;
+    padding: 0 0.5rem 0 0.5rem;
+    margin: 0 0 0 0;}
+#social-link > a:hover {
+    color: var(--accent-color);
+    display:inline-block;
+    transform: scale(0.9);}
 
 #frame-div {
     /* class="bg-zinc-800 h-fit bg-cover flex flex-row justify-center items-center" */
@@ -79,3 +105,4 @@ footer {color: var(--font-color);}
     align-items:center;
     color: var(--font-color);
 }
+
