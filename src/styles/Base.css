@@ -49,10 +49,13 @@ header {color: var(--font-color);}
 #main-div{
     width: var(--default-width);
 }
+#hero-section:hover {
+    box-shadow: 0px 0px 8px var(--accent-color);
+}
 
 /* Main:Index */
 #header-tag {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 

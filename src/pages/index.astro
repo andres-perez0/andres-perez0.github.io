@@ -6,24 +6,34 @@ import Layout from "../layouts/Layout.astro"
     <div slot="main" id="frame-div">
         <div id="main-div" class="m-0 p-0">
             <div id="hero-section" class="flex flex-col items-center rounded-md border-2 w-auto mx-4 my-4 p-5 hover-shadow">
-                <div id="title-div">
-                    <h1 id="header-tag" class="text-center my-2">hello hello</h1>
-                    <img id="main-image" src="/brand/PFP.jpg" alt="Placeholder image until I get a professional one." class="rounded-lg shadow-lg ">
-                </div>
-                <div id="main-text" class="indent-8 break-words my-2">
-                    <p> i'm andres perez, an undergraduate @ the university of notre dame studying computer engineering with a minor in engineering 
+                <h1 id="header-tag">hello, welcome 👋</h1>
+                <div class="flex flex-row gap-8 items-center">
+                    <div>
+                        <p>i'm andres perez, an undergraduate @ the university of notre dame studying computer engineering with a minor in engineering 
                         corporate practice. my interests lie in embedded systems, robotics, and semiconductors. </p>
-                    <ul class="indent-4 list-disc list-inside my-4"> currently, i'm:
-                        <li>aiming to join an electrical engineering / low-level systems research lab this semester </li>
-                        <li>committing my time to irishsat as the new electronics lead for the GOAT subteam, where i'm leading development on our helmholtz cage project</li>
-                        <li>diving into hands-on work that blends circuit design, embedded software, and systems engineering</li>
-                        <li>on the lookout for an internship for summer 2026</li>
-                    </ul>
-                    <p> in my free time, i lift weights, play chess + billiards, and chip away at learning japanese. i’m also always down to talk
-                         robotics, system design, or your favorite anime.</p>
-
-                </div>
+                        <ul class="indent-4 list-disc list-inside my-2">currently, i'm:
+                            <li>aiming to join an electrical engineering / low-level systems research lab this semester </li>
+                            <li>committing my time to irishsat as the new electronics lead for the GOAT subteam, where i'm leading development on our helmholtz cage project</li>
+                            <li>diving into hands-on work that blends circuit design, embedded software, and systems engineering</li>
+                            <li>on the lookout for an internship for summer 2026</li>
+                        </ul>
+                    </div>
+                    <img id="main-image" src="/brand/PFP.jpg" alt="Placeholder image until I get a professional one." class="rounded-lg shadow-lg w-64 h-64 object-cover shrink-0">
+                </div> 
+                <p>in my free time, i lift weights, play chess + billiards, and chip away at learning japanese. i'm also always down to talk
+                    robotics, system design, or your favorite anime.</p>
             </div>
         </div>
     </div>
 </Layout>
+
+<style>
+    p {
+        text-indent: 2rem;
+        overflow-wrap: break-word;
+        margin: 0.25rem 0;
+    }
+    #frame-div{
+        height: 85vh;
+    }
+</style>
