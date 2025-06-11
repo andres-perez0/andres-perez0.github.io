@@ -49,9 +49,6 @@ header {color: var(--font-color);}
 #main-div{
     width: var(--default-width);
 }
-#hero-section:hover {
-    box-shadow: 0px 0px 8px var(--accent-color);
-}
 
 /* Main:Index */
 #header-tag {
@@ -79,6 +76,18 @@ header {color: var(--font-color);}
     overflow-wrap: break-word;
     margin: 0.25rem 0;
 }
+
+#frame-div {
+    /* class="h-fit bg-cover flex flex-row justify-center items-center" */
+    height:fit-content;
+    background-size:cover;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color: var(--font-color);
+}
+
 #miguel-tag {color: #D8C787;}
 
 /* Footer */
@@ -116,15 +125,4 @@ footer {
     color: var(--accent-color);
     display:inline-block;
     transform: scale(0.9);}
-
-#frame-div {
-    /* class="h-fit bg-cover flex flex-row justify-center items-center" */
-    height:fit-content;
-    background-size:cover;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    color: var(--font-color);
-}
 
