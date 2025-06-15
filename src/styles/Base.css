@@ -15,10 +15,13 @@
 :root {
     --accent-color: #7389f4;
     --border-color: #7389f4;
+    --theme-color: #18181b;
     --font-color: rgb(255, 255, 255);
     --default-width: 50%;
-    
 }
+
+/* Light Mode Variables */
+/* .light-theme {} */
 
 /* Bottom value */
 @media (min-width: 	50px) {:root {--default-width: 95%;}}
@@ -38,11 +41,52 @@
 #divide-color {border-color:var(--border-color);}
 
 /* Header */
-header {color: var(--font-color);}
+header {
+    color: var(--font-color);
+    --tw-bg-opacity: 1;
+    background-color: var(--theme-color);
+    font-size: 1.125rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+    display:flex;
+    justify-content: space-between;
+    padding: 1rem;
+    text-decoration-line: none;
+}
+
+body {
+    color: var(--font-color);
+    --tw-bg-opacity: 1;
+    background-color: var(--theme-color);
+}
+
+footer {
+    /* "bg-zinc-900 bottom-0 left-0 w-full flex justify-between items-center p-4 */
+    color: var(--font-color);
+    --tw-bg-opacity: 1;
+    background-color: var(--theme-color);
+    bottom:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+p {
+    text-indent: 2rem;
+    overflow-wrap: break-word;
+    margin: 0.25rem 0;
+}
 
 #header-title:hover {color: var(--accent-color);}
-    
+
+#pages-link {
+    display:flex;
+    align-items: center;
+}
 #pages-link > a {margin-left: 2rem;}
+#pages-link > button {margin-left: 2rem;}
 #pages-link > a:hover {color: var(--accent-color);}
 
 /* Main */
@@ -71,12 +115,6 @@ header {color: var(--font-color);}
     box-shadow: 0px 0px 8px var(--accent-color);
 }
 
-#textblock-div > p {
-    text-indent: 2rem;
-    overflow-wrap: break-word;
-    margin: 0.25rem 0;
-}
-
 #frame-div {
     /* class="h-fit bg-cover flex flex-row justify-center items-center" */
     height:fit-content;
@@ -89,21 +127,6 @@ header {color: var(--font-color);}
 }
 
 #miguel-tag {color: #D8C787;}
-
-/* Footer */
-footer {
-    /* "bg-zinc-900 bottom-0 left-0 w-full flex justify-between items-center p-4 */
-    color: var(--font-color);
-    --tw-bg-opacity: 1;
-    background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1)) /* #18181b */;
-    bottom:0;
-    left:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items: center;
-    padding: 1rem;
-}
 
 #trademark {
     flex-grow: 1;

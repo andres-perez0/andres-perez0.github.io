@@ -1,7 +1,10 @@
-<header class="bg-zinc-900 text-lg flex justify-between p-4 no-underline">
-    <h1 id="header-title">
-      &res Perez
-    </h1>
+---
+import {Icon} from 'astro-icon/components';
+const icon_height=20;
+---
+
+<header>
+    <h1 id="header-title"><a href="/">&res Perez</a></h1>
 
     <!-- Navigate through Pages -->
     <nav id="pages-link">
@@ -9,6 +12,7 @@
       <a href="/projects">Projects</a>
       <a href="/resume">Resume</a>
       <a href="/contact">Contact</a>
+      <button id="theme-toggle"><Icon name="mdi:moon-waxing-crescent" size={icon_height}></Icon></button>
     </nav>
     
 </header>
