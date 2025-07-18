@@ -39,6 +39,7 @@
 @media (min-width: 	1536px) {:root {--default-width: 50%;}}
 
 #divide-color {border-color:var(--border-color);}
+#ECP-class {color: #D8C787;}
 
 /* Header */
 header {
