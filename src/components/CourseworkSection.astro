@@ -1,0 +1,42 @@
+---
+import type { Semester } from '../data/coursework';
+import { minorProgress } from '../data/coursework';
+
+interface Props {
+  semesters: Semester[];
+  showMinors?: boolean;
+}
+
+const { semesters, showMinors = false } = Astro.props;
+---
+
+<div id="textblock-div">
+  <h1 id="header-tag">Coursework 📚</h1>
+  <hr class="border-zinc-400 my-4" />
+
+  {semesters.map((semester) => (
+    <div>
+      <h2 class="text-left text-lg">
+        {semester.term} {semester.year} 
+        {semester.projected ? ' (Projected;' : ' ('}
+        {semester.credits} Credits{')'}
+      </h2>
+      <ul class="indent-2 list-disc list-inside mb-4">
+        {semester.courses.map((course) => (
+          <li class={course.minor ? `minor-${course.minor}` : ''}>
+            {course.minor === 'ecp' && '*'}
+            {course.code} - {course.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+  {showMinors && (
+    <>
+      <p class="minor-ecp">*{minorProgress.ecp.name} ({minorProgress.ecp.current}/{minorProgress.ecp.total})</p>
+      <p class="minor-math">*{minorProgress.math.name} ({minorProgress.math.current}/{minorProgress.math.total})</p>
+    </>
+  )}
+</div>
+

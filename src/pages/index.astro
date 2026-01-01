@@ -1,6 +1,8 @@
 ---
 // Components Imports
 import Layout from "../layouts/Layout.astro"
+import CourseworkSection from "../components/CourseworkSection.astro"
+import { coursework } from "../data/coursework"
 ---
 <Layout title="Home - Andres Perez">
     <div slot="main" id="frame-div">
@@ -22,64 +24,21 @@ import Layout from "../layouts/Layout.astro"
                             <li>On the lookout for an internship for Summer 2026!</li>
                         </ul>
                     </div>
-                    <img id="main-image" src="/brand/aperez26_headshot.jpg" alt="Photo by William Mendler" class="rounded-lg shadow-lg ml-1 w-3/4 object-contain">
+                    <img 
+                        id="main-image" 
+                        src="/brand/aperez26_headshot.jpg" 
+                        alt="" 
+                        class="rounded-lg shadow-lg ml-1 w-3/4 object-contain"
+                        loading="lazy"
+                        width="400"
+                        height="400"
+                    >
                 </div> 
                 <p> Beyond the classroom, I enjoy working out, playing chess and billiards, and chipping alway at learning Japanese! 
                     僕の日本語は下手ですが、毎日勉強しています。I love talking about musicals, space and the latests in tech! </p>
             </div>
 
-            <div id="textblock-div">
-                <h1 id="header-tag">Coursework 📚</h1>
-                <hr class="border-zinc-400 my-4" />
-
-                <h2 class="text-left text-lg">Spring 2026 (Projected; 19 Credits)</h2>
-                <ul class="indent-2 list-disc list-inside mb-4">
-                    <li>CSE 20289 - System Programming</li>
-                    <li>CSE 20222 - Logic and Processor Design</li>
-                    <li>CSE 30124 - Introduction to Artifical Intelligence</li>
-                    <li>EE 20221 - Signals and Information Systems</li>
-                    <li>EE 20231 - Digital Design for Smart Interconnected Systems</li>
-                    <li>EE 20241 - Electronic Devices & Systems</li>
-                </ul> 
-
-                <h2 class="text-left text-lg">Fall 2025 (18 Credits)</h2>
-                <ul class="indent-2 list-disc list-inside mb-4">
-                    <li id="math-minor">CSE 20110 - Discrete Mathematics</li>
-                    <li>CSE 20312 - Data Structures</li>
-                    <li>EE 20100 - Introduction to ECE</li>
-                    <li>EE 28499 - Undergraduate Research</li>
-                    <li id="math-minor">Math 20580 - Linear Algebra & Differential Equations</li>
-                    <li>Phys 10320 - Engineering Physics II: Electromagnetism</li>
-                </ul>
-
-                <h2 class="text-left text-lg">Summer 2025 (6 Credits)</h2>
-                <ul class="indent-2 list-disc list-inside mb-4">
-                    <li id="ecp-minor">*EG 44421 - Integrated Engineering and Business Fundamentals</li>
-                    <li>EG 34001 - Exploring Engineering Feats of London</li>
-                </ul>
-
-                <h2 class="text-left text-lg">Spring 2025 (19 Credits)</h2>
-                <ul class="indent-2 list-disc list-inside mb-4">
-                    <li>CSE 20311 - Fundamentals of Computing</li>
-                    <li>EE 10200 - Introduction to Embedded Systems</li>
-                    <li>FYS 10102 - Moreau First Year Experience</li>
-                    <li>Math 10560 - Calculus II</li>
-                    <li>Phys 10310 - Engineering: Phys I: Mechanics</li>
-                    <li>RU 13186 - Usem Literature: The Anti-Empire Empire: Russia, Center, and Periphery</li>
-                </ul>
-                
-                <h2 class="text-left text-lg">Fall 2024 (18 Credits)</h2>
-                <ul class="indent-2 list-disc list-inside">
-                    <li>CHEN 10171 - Introduction to Chemical Principles</li>
-                    <li id="ecp-minor">*ECON 10010 - Principles of Microeconomics</li>
-                    <li>EG 10117 - Engineering Design</li>
-                    <li>FYS 10101 - Moreau First Year Experience</li>
-                    <li>Math 10550 - Calculus I</li>
-                    <li>THEO 10001 - Foundations of Theology: Biblical/Historical</li>
-                </ul>
-                <p id="ecp-minor">*Engineering Cooperate Practice Minor (2/5)</p>
-                <p id="math-minor">*Mathematics Minor (2/5)</p>
-            </div>
+            <CourseworkSection semesters={coursework} showMinors={true} />
         </div>
     </div>
 </Layout>

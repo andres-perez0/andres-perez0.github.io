@@ -39,8 +39,8 @@
 @media (min-width: 	1536px) {:root {--default-width: 50%;}}
 
 #divide-color {border-color:var(--border-color);}
-#ecp-minor {color: #D8C787;}
-#math-minor {color: #61b7f9;}
+.minor-ecp {color: #D8C787;}
+.minor-math {color: #61b7f9;}
 
 /* Header */
 header {
