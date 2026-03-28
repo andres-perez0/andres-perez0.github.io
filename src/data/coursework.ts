@@ -14,10 +14,24 @@ export interface Semester {
 
 export const coursework: Semester[] = [
   {
+    term: 'Fall',
+    year: 2026,
+    credits: 18,
+    projected: true,
+    courses: [
+      { code: 'CSE 30341', name: 'Operating System Principles' },
+      { code: 'CSE 30342', name: 'Digital Integrated Circuits' },
+      { code: 'CSE 30264', name: 'Computer Networks' },
+      { code: 'EE 30132', name: 'Applied Embedded System Design' },
+      { code: 'EE 30122', name: 'Systems Theory and Applications' },
+      { code: 'MATH 30650', name: 'Differential Equations',  minor: 'math' },
+    ],
+  },
+  {
     term: 'Spring',
     year: 2026,
     credits: 19,
-    projected: true,
+    projected: false,
     courses: [
       { code: 'CSE 20289', name: 'System Programming' },
       { code: 'CSE 20222', name: 'Logic and Processor Design' },
@@ -45,7 +59,7 @@ export const coursework: Semester[] = [
     year: 2025,
     credits: 6,
     courses: [
-      { code: 'EG 44421', name: 'Integrated Engineering and Business Fundamentals', minor: 'ecp' },
+      { code: 'EG 44421', name: 'Integrated Engineering and Business Fundamentals'}, //, minor: 'ecp' 
       { code: 'EG 34001', name: 'Exploring Engineering Feats of London' },
     ],
   },
@@ -68,7 +82,7 @@ export const coursework: Semester[] = [
     credits: 18,
     courses: [
       { code: 'CHEN 10171', name: 'Introduction to Chemical Principles' },
-      { code: 'ECON 10010', name: 'Principles of Microeconomics', minor: 'ecp' },
+      { code: 'ECON 10010', name: 'Principles of Microeconomics'}, // , minor: 'ecp' 
       { code: 'EG 10117', name: 'Engineering Design' },
       { code: 'FYS 10101', name: 'Moreau First Year Experience' },
       { code: 'Math 10550', name: 'Calculus I' },
@@ -78,7 +92,7 @@ export const coursework: Semester[] = [
 ];
 
 export const minorProgress = {
-  ecp: { current: 2, total: 5, name: 'Engineering Cooperate Practice Minor' },
-  math: { current: 2, total: 5, name: 'Mathematics Minor' },
+  // ecp: { current: 2, total: 5, name: 'Engineering Cooperate Practice Minor' },
+  math: { current: 3, total: 5, name: 'Mathematics Minor' },
 };
 

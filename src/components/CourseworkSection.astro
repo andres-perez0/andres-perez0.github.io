@@ -17,15 +17,14 @@ const { semesters, showMinors = false } = Astro.props;
   {semesters.map((semester) => (
     <div>
       <h2 class="text-left text-lg">
-        {semester.term} {semester.year} 
-        {semester.projected ? ' (Projected;' : ' ('}
-        {semester.credits} Credits{')'}
+        {semester.term} {semester.year} {semester.projected ? '(Projected; ' : '('}{semester.credits} Credits{')'}
       </h2>
       <ul class="indent-2 list-disc list-inside mb-4">
         {semester.courses.map((course) => (
           <li class={course.minor ? `minor-${course.minor}` : ''}>
-            {course.minor === 'ecp' && '*'}
-            {course.code} - {course.name}
+            {/* if it identifies the course a math, then it'll render a star */}
+            {course.minor === 'math' && '*'}{course.code} - {course.name} 
+            {/* {course.minor === 'math' && '*'} {course.code} - {course.name} */}
           </li>
         ))}
       </ul>
@@ -34,7 +33,7 @@ const { semesters, showMinors = false } = Astro.props;
 
   {showMinors && (
     <>
-      <p class="minor-ecp">*{minorProgress.ecp.name} ({minorProgress.ecp.current}/{minorProgress.ecp.total})</p>
+      {/* <p class="minor-ecp">*{minorProgress.ecp.name} ({minorProgress.ecp.current}/{minorProgress.ecp.total})</p> */}
       <p class="minor-math">*{minorProgress.math.name} ({minorProgress.math.current}/{minorProgress.math.total})</p>
     </>
   )}
