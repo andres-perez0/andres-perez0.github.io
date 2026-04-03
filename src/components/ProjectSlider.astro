@@ -1,0 +1,108 @@
+---
+/**
+ * Horizontal swipe gallery used across the projects page.
+ *
+ * Uses Astro’s `<Image />` so each file under `src/assets/` is resized and emitted in
+ * efficient formats at **build time** (see `astro.config.mjs` for how that pipeline is configured).
+ */
+import { Image } from "astro:assets";
+import type { ProjectSlide } from "../types/projectGallery";
+
+export interface Props {
+  slides: ProjectSlide[];
+  /**
+   * Set `true` only for the first gallery on the page that is actually above the fold.
+   * Astro’s image pipeline will then treat that first `<img>` as the LCP candidate:
+   * eager load, synchronous decode, and high fetch priority (see props on `<Image />` below).
+   */
+  prioritizeFirstSlide?: boolean;
+}
+
+const { slides, prioritizeFirstSlide = false } = Astro.props;
+
+/**
+ * ~48rem (`max-width` of the slider) in CSS pixels. Capping width avoids serving full-resolution photos
+ * when the layout never displays them wider than this.
+ */
+const MAX_DISPLAY_WIDTH = 768;
+
+/**
+ * Props on `<Image />` below that map directly to native `<img>` behavior:
+ *
+ * - `loading="lazy"` — defers the network request until the image is near the viewport (browser-defined distance).
+ *   The first slide of the first gallery uses `eager` so the likely LCP image is not delayed.
+ * - `decoding="async"` — allows the browser to decode this image off the critical path; the LCP candidate uses
+ *   `sync` so pixels can appear as soon as the bytes arrive (trade a little jank for faster first paint).
+ * - `fetchpriority="low"` — signals that this request is less important than default; competing CSS/JS/fonts and
+ *   the one `high` image get bandwidth first. Pair with lazy loading for off-screen slides.
+ */
+---
+
+<div class="slider-wrapper">
+  <div class="slider">
+    {
+      slides.map((slide, index) => {
+        const isLcpCandidate = prioritizeFirstSlide && index === 0;
+        const slideId = slide.id ?? `slide-${index + 1}`;
+
+        return (
+          <Image
+            id={slideId}
+            src={slide.src}
+            alt={slide.alt}
+            width={MAX_DISPLAY_WIDTH}
+            loading={isLcpCandidate ? "eager" : "lazy"}
+            decoding={isLcpCandidate ? "sync" : "async"}
+            fetchpriority={isLcpCandidate ? "high" : "low"}
+          />
+        );
+      })
+    }
+    <div class="slide-nav">
+      {slides.map((_, index) => <a href={`#slide-${index + 1}`} />)}
+    </div>
+  </div>
+</div>
+
+<style>
+  .slider-wrapper {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+  .slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+  }
+  /* `<Image />` renders a plain `<img>`; `:global` keeps this rule working under Astro’s scoping */
+  .slider :global(img) {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: contain;
+  }
+  .slide-nav {
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  .slide-nav a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+  }
+  .slide-nav a:hover {
+    opacity: 1;
+  }
+</style>

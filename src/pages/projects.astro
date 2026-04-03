@@ -1,489 +1,402 @@
 ---
-// Components Imports
-import Layout from "../layouts/Layout.astro"
+import Layout from "../layouts/Layout.astro";
+import ProjectSlider from "../components/ProjectSlider.astro";
+import {
+  carpaSlides,
+  droneResearchSlides,
+  eddSlides,
+  goatlabHighlightSlides,
+  invenTeamSlides,
+  irishSatDetailSlides,
+  rfcSlides,
+  summerClassifierSlides,
+  summerMpu9250Slides,
+  summerPcbSlides,
+  vexSlides,
+} from "../data/projectSlides";
 
-export const vex_skills = [ "C++", 
-                            "Fusion 360"];
-export const vex_awards = [ "Excellence Award (State Qualifier)",
-                            "Innovate Award (State Qualifier)", 
-                            "Design Award", "Judges Award",];
+export const vex_skills = ["C++", "Fusion 360"];
+export const vex_awards = [
+  "Excellence Award (State Qualifier)",
+  "Innovate Award (State Qualifier)",
+  "Design Award",
+  "Judges Award",
+];
 export const invent_skills = ["Fusion 360"];
 export const carpa_skills = ["Lithium Iron Phosphate Batteries", "Circuits"];
-export const edd_skills = ["Soldering","Electronics"];
-export const irishsat_skills = ["C", "Python","KiCad", "Arduino","Electronics"];
-export const irishsat_github = [{name: "IrishSat", url: "https://github.com/ND-IrishSat"}, {name: "Helmotlz Cage", url: "https://github.com/ND-IrishSat/Helmholtz-24-25"},
-                                {name: "Goat PCB", url: "https://github.com/ND-IrishSat/GOAT-PCB"}, {name: "Txt Writer", url: "https://github.com/andres-perez0/GoatLab-ArduinoTextWriter"},];
+export const edd_skills = ["Soldering", "Electronics"];
+export const irishsat_skills = ["C", "Python", "KiCad", "Arduino", "Electronics"];
+export const irishsat_github = [
+  { name: "IrishSat", url: "https://github.com/ND-IrishSat" },
+  { name: "Helmotlz Cage", url: "https://github.com/ND-IrishSat/Helmholtz-24-25" },
+  { name: "Goat PCB", url: "https://github.com/ND-IrishSat/GOAT-PCB" },
+  {
+    name: "Txt Writer",
+    url: "https://github.com/andres-perez0/GoatLab-ArduinoTextWriter",
+  },
+];
 ---
 <Layout title="Projects - Andres Perez" description="Online Engineering Portfolio">
-    <body>
-        <div slot="main" id="frame-div">
-            <div id="main-div" class="m-0 p-0">
-                <div id="textblock-div">
-                    <h1 id="header-tag">Projects ⚙️</h1>
-                    <p>Entering university, I would need to be prepared for the new challenges and projects I would encounter. 
-                    So, I thought it would be a fun venture to learn how to make a website to track and document the projects 
-                    I want to do. I was also inspired to start this after seeing how amazing my friend 
-                    <a id="miguel-tag" href="https://github.com/Kaweees">Miguel VF</a>'s 
-                    <a id="miguel-tag" href="https://miguelvf.dev/">website</a> looked!</p>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">GOATLAB 🐐</h1>
-                    <div class="flex justify-between italic">
-                        <h3>Electronics Lead</h3>
-                        <h3>Sept. 2024 - Present</h3>
-                    </div>
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img src="/projects/IrishSat/normal_activity.jpg" alt="">
-                                <img src="/projects/IrishSat/simulation_graph.jpg" alt="">
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                            </div>
-                        </div>
-                    </section>
-                    <div>
-                        <p class="flex justify-center items-center my-2 italic">Cage running a simulation below!</p>
-                        <video controls>
-                            <source src= "/projects/IrishSat/cage_video.mp4" type="video/mp4">
-                        </video>
-                    </div> 
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Fall 2025 Drone Research</h1>
-                    <div class="flex justify-between italic">
-                        <h3></h3>
-                        <h3>Aug. 2025 - Present</h3>
-                    </div>
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img src="/projects/research/set_up.jpg" alt="">
-                                <img src="/projects/research/flow.png" alt="">
-                                <img src="/projects/research/wireshark.jpg" alt="">
-                                <img src="/projects/research/csv.jpg" alt="">
-                                <img src="/projects/research/gps_tracker.png" alt="">
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                                <a href="#slide-4"></a>
-                                <a href="#slide-5"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">CREATE Newsletter 🫱🏽‍🫲🏼</h1>
-                    <div class="flex justify-between italic">
-                        <h3>Co-Author</h3>
-                        <h3>Sept. 2025 - Present</h3>
-                    </div>
-                    <section id="container">
-                        <p class="flex justify-center items-center my-2 italic">Scroll through a template of an Newsletter!</p>
-                        <iframe 
-                            src="/test.html" 
-                            class="w-full h-[500px] border rounded-xl shadow"
-                        ></iframe>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Summer Projects ☀️ - Hardware-Accelerated Human Activity Classifier</h1>
-                    <div class="flex justify-between italic">
-                        <h3></h3>
-                        <h3>May. 2025 - Aug. 2025</h3>
-                    </div>
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img src="/projects/temp/Rx_Tx_ML_project.jpg" alt="">
-                                <img src="/projects/temp/sitting_0.png" alt="">
-                                <img src="/projects/temp/walking_10.png" alt="">
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Summer Projects ☀️ - MCU Data Logger 2 & 4 Layer PCB</h1>
-                    <div class="flex justify-between italic">
-                        <h3></h3>
-                        <h3>May. 2025 - Present</h3>
-                    </div>
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img src="/projects/temp/four_layer_design.png" alt="">
-                                <img src="/projects/temp/four_layer_view.png" alt="">
-                                <img src="/projects/temp/manufacture_pcb_front.jpg" alt="">
-                                <img src="/projects/temp/manufacture_pcb_back.jpg" alt="">
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                                <a href="#slide-4"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Summer Projects ☀️ - Live Sensor Data Visualization System</h1>
-                    <div class="flex justify-between italic">
-                        <h3></h3>
-                        <h3>May. 2025</h3>
-                    </div>
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img src="/projects/temp/mpu9250_arduino.jpg" alt="">
-                                <img src="/projects/temp/mpu9250_arduino_setup.jpg" alt=""> 
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Summer Projects ☀️ - Gravity Simulator in C++ using OpenGL</h1>
-                    <div class="flex justify-between italic">
-                        <h3></h3>
-                        <h3>May. 2025 - Aug. 2025</h3>
-                    </div>
-                    <div>
-                        <video controls>
-                            <source src= "/projects/temp/twoBodiesInOrbit.mp4" type="video/mp4">
-                        </video>
-                    </div> 
-                    <div>
-                        <video controls>
-                            <source src= "/projects/temp/fourBodiesInOrbit.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <p>Work in Progress ... </p>
-                </div>
-                
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">IrishSat - Goatlab 🍀</h1>
-                    <div class="flex justify-between italic">
-                        <h3>Electronics Lead</h3>
-                        <h3>Aug. 2024 - Present</h3>
-                    </div>
-                    <p>IrishSat's Helmholtz Cage project has been a defining experience in my journey, 
-                    providing hands-on opportunities to integrate hardware and software in real-world applications. Collaborating 
-                    with a dedicated team, I developed a Python program to process serial data from a magnetometer and Arduino, 
-                    enabling seamless conversion of magnetic vector readings into MATLAB-readable files. Under expert mentorship, 
-                    I honed my skills in KiCad, MATLAB, and Raspberry Pi, contributing to iterative improvements in our Helmholtz 
-                    Cage design. Taking ownership of circuit optimization, I designed a custom Arduino R3 hat PCB to compact circuits, 
-                    carefully selecting components and managing footprints. Pair programming allowed me to support the final magnetometer 
-                    driver programming, while I also designed a Python GUI to interface with a Raspberry Pi, enabling manual and 
-                    PID-controlled magnetic field adjustments and visualizing dynamic field-time graphs. </p>
-                    <p>This project has reinforced my passion for interdisciplinary problem-solving and has inspired future goals, 
-                    such as implementing PySol for coordinate-based field simulation and enhancing our PCB and GUI designs.</p>
-                    <div class="flex flex-wrap justify-evenly break-words my-2">
-                        <div class="indent-8 w-full sm:w-1/2">
-                            <h3> Githubs: </h3>
-                            <ul>
-                                {irishsat_github.map(github => (
-                                  <li class="indent-16">
-                                    <a id="github-repo" href={github.url} target="_blank" rel="noopener noreferrer">{github.name}</a>
-                                  </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div class="indent-8 w-full sm:w-1/2">
-                            <h3> Key Skills: </h3>
-                            <ul> {irishsat_skills.map(skill => (<li class="indent-16">{skill}</li>))} </ul>
-                        </div>
-                    </div>
-
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img src="/projects/IrishSat/GOAT_Electrical_Banquet_Poster_Spring_2025.png" alt="">
-                                <img src="/projects/IrishSat/IrishSatPhoto3.png" alt="">
-                                <img src="/projects/IrishSat/IrishSatPhoto2.png" alt="">
-                                <img src="/projects/IrishSat/IrishSatPhoto1.png" alt="">
-                                <img src="/projects/IrishSat/GOATPCB_layout.png" alt="">
-                                <img src="/projects/IrishSat/GOATPCB_3D_view.png" alt="">
-                                <img src="/projects/IrishSat/IrishSatPhoto4.png" alt="">
-                                <img src="/projects/IrishSat/Magnetometer_layout.png" alt="">
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                                <a href="#slide-4"></a>
-                                <a href="#slide-5"></a>
-                                <a href="#slide-6"></a>
-                                <a href="#slide-7"></a>
-                                <a href="#slide-8"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Robotic Football Club 🏈</h1>
-                    <div class="flex justify-between italic">
-                        <h3>Electronics Team</h3>
-                        <h3>Aug. 2024 - May. 2025</h3>
-                    </div>
-                    <p> My involvement in robotic football in freshmen year focused mainly on practical 
-                        application and skill development. I honed my soldering skills working on LED strips and 
-                        took on the reconstructing the Pi Hat PCB that connects the Raspberry Pi and power the smaller 
-                        electronics. This involved bringing the design to Git and creating and correcting 
-                        the generated Bill of Materials (BOM) and Component Placement List files from KiCad. 
-                        These files were then successfully exported for JLCPCB manufacturing, 
-                        ensuring the accurate production of our component 
-                    </p>
-
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img id="slide-1" src="/projects/RFC/RFCPhoto1.png" alt="">
-                                <img id="slide-2" src="/projects/RFC/RFCPhoto2.png" alt="">
-                                <img id="slide-3" src="/projects/RFC/RFCPhoto3.png" alt="">
-                                <img id="slide-4" src="/projects/RFC/RFCPhoto4.jpg" alt="">
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                                <a href="#slide-4"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">VEX Robotics 🤖</h1>
-                    <div  class="flex justify-between italic">
-                        <h3>Team Captin</h3>
-                        <h3>Aug. 2021 -Oct. 2023</h3>
-                    </div>
-                    <p> VEX Robotics has been the most significant influence in my decision to pursue engineering. As a member of 
-                    Team 687B Nerd Herd, I gained my first exposure to a STEM curriculum. Starting on the mechanical 
-                    team, I learned the engineering design process, used CAD software like Fusion 360, 
-                    and honed my skills in mechanical assembly. </p>
-                    <p> Over time, I was promoted to team captain, where I co-led a group of 12 members. Together with my 
-                    co-captain, I organized team meetings, tracked participation, and drove continuous improvements in our designs and 
-                    code to compete at a high level. </p>
-
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img id="slide-1" src="/projects/VEX/VEXPhoto1.jpg" alt="">
-                                <img id="slide-2" src="/projects/VEX/VEXPhoto2.png" alt="">
-                                <img id="slide-3" src="/projects/VEX/VEXPhoto3.png" alt="">
-                                <img id="slide-4" src="/projects/VEX/VEXPhoto4.png" alt="">
-                                <img id="slide-5" src="/projects/VEX/VEXPhoto5.png" alt="">
-                                <img id="slide-6" src="/projects/VEX/VEXPhoto6.png" alt="">
-                                <img id="slide-7" src="/projects/VEX/VEXPhoto7.jpg" alt="">
-                                <img id="slide-8" src="/projects/VEX/VEXPhoto8.jpg" alt="">
-                            </div>
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                                <a href="#slide-4"></a>
-                                <a href="#slide-5"></a>
-                                <a href="#slide-6"></a>
-                                <a href="#slide-7"></a>
-                                <a href="#slide-8"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                
-                <div id="textblock-div">
-                    <h1 id="header-tag">MIT InvenTeam 🦞</h1>
-                    <div  class="flex justify-between italic">
-                        <h3>Mechanical Team</h3>
-                        <h3>Aug. 2022 - Nov. 2023</h3>
-                    </div>
-
-                    <p> Although it was a smaller commitment, the MIT InvenTeam revolutionized how I viewed engineering. We identified a problem 
-                    within the community, isolated possible solutions, and received real feedback from our customer base. Working with a team 
-                    of 15, we drafted a winning proposal and secured a $7,500 grant as one of ten selected teams, focusing on design solutions 
-                    for larger urban and tourist areas in my hometown. Furthermore, I practiced my Fusion 360 skills for the design and stress 
-                    testing of critical Smart Walker components, including the frame, seat, and handles. I experienced firsthand the iterative 
-                    prototyping of a product to refine the Smart Walker for presentation at the 2023 Lemelson-MIT EurekaFest. </p>
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img id="slide-1" src="/projects/InvenTeam/InventPhoto1.jpg" alt="">
-                                <img id="slide-2" src="/projects/InvenTeam/InventPhoto2.jpg" alt="">
-                                <img id="slide-3" src="/projects/InvenTeam/InventPhoto3.jpg" alt="">
-                                <img id="slide-4" src="/projects/InvenTeam/InventPhoto4.jpg" alt="">
-                                <img id="slide-5" src="/projects/InvenTeam/InventPhoto5.jpg" alt="">
-                            </div>
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                                <a href="#slide-4"></a>
-                                <a href="#slide-5"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Engineering Design & Development 🔧</h1>
-                    <div class="flex justify-between italic">
-                        <h3>Electronics Team</h3>
-                        <h3>Aug. 2023 - Jun. 2024</h3>
-                    </div>
-                    <a class="flex text-center justify-center" id="github-repo" href="https://www.youtube.com/watch?v=zvDc4tibHWs"> Watch the demonstration here!</a>
-                    <p> For my engineering design project class, we were tasked with designing and building a semi-autonomous suite of robotic 
-                        mechanisms for use in exploring hazardous environments. To approach this, we broke the problem down into multiple components, 
-                        and I joined the module group. In this group, I worked on the electrical aspects of the modules, where I learned soldering.
-                        For the actual modules, we decided to use an ESP-32 microcontroller with high-torque micro gear motors. We also included other 
-                        components, such as a magnetic encoder, MOSFETs, and a TB6612FNG dual motor driver carrier. </p>
-                    <section class="container">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <div class="slider-wrapper">
-                            <div class="slider">
-                                <img src="/projects/EDD/EDDPhoto1.jpg" alt="Final EDD Module Completed">
-                                <img id="slide-2" src="/projects/EDD/EDDPhoto2.jpg" alt="Final EDD Module Completed; Far View">
-                                <img id="slide-3" src="/projects/EDD/EDDPhoto3.jpg" alt="EDD-Borrow Home Soldering Set Up">
-                                <img id="slide-4" src="/projects/EDD/EDDPhoto4.jpg" alt="Work Bench">
-                                <img id="slide-5" src="/projects/EDD/EDDPhoto5.jpg" alt="">
-                                <img id="slide-6" src="/projects/EDD/EDDPhoto6.jpg" alt="">
-                                <img id="slide-7" src="/projects/EDD/EDDPhoto7.jpg" alt="">
-                            </div>
-                            <div class="slide-nav">
-                                <a href="#slide-1"></a>
-                                <a href="#slide-2"></a>
-                                <a href="#slide-3"></a>
-                                <a href="#slide-4"></a>
-                                <a href="#slide-5"></a>
-                                <a href="#slide-6"></a>
-                                <a href="#slide-7"></a>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">CARPA Racing Team 🏎️</h1>
-                    <div class="flex justify-between italic">
-                        <h3>Pit Crew</h3>
-                        <h3>Jan. 2024 - May. 2024</h3>
-                    </div>
-                    <p>The CARPA Racing Team is a branch of the Engineering Design Class, where we had the opportunity to work on a race car designed 
-                    for energy efficiency. However, safety was our highest priority, so we avoided making drastic measures to reduce weight. </p>
-
-                    <p>In this project, we replaced and maintained the race cars from previous years. I had the opportunity to learn about the car's circuitry 
-                    and connect various components. We also utilized LiFe batteries. By physically replacing the disk brakes and motors, we were able 
-                    to reduce the heat generated during prolonged use, ultimately increasing electric efficiency.</p>
-
-                    <div class= "break-words">
-                        <p class="flex justify-center items-center my-2 italic">Swipe through the slides below to see highlights!</p>
-                        <section class="container">
-                            <div class="slider-wrapper">
-                                <div class="slider">
-                                    <img id="slide-1" src="/projects/CARPA/CARPAPhoto1.jpg" alt="">
-                                    <img id="slide-2" src="/projects/CARPA/CARPAPhoto2.jpg" alt="">
-                                    <img id="slide-3" src="/projects/CARPA/CARPAPhoto3.jpg" alt="">
-                                    <img id="slide-4" src="/projects/CARPA/CARPAPhoto4.jpg" alt="">
-                                    <img id="slide-5" src="/projects/CARPA/CARPAPhoto5.jpg" alt="">
-                                    <img id="slide-6" src="/projects/CARPA/CARPAPhoto6.jpg" alt="">
-                                </div>
-                                <div class="slide-nav">
-                                    <a href="#slide-1"></a>
-                                    <a href="#slide-2"></a>
-                                    <a href="#slide-3"></a>
-                                    <a href="#slide-4"></a>
-                                    <a href="#slide-5"></a>
-                                    <a href="#slide-6"></a>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-
-                <div id="textblock-div">
-                    <h1 id="header-tag">Portfolio Website 💻</h1>
-                    <div class="flex justify-between italic">
-                        <h3>Developer</h3>
-                        <h3>Jul. 2024 - Present</h3>
-                    </div>
-                    <p> This is my most recent project (at the time of writing this). Regardless, it is my first actual software project, and in all 
-                    honesty, it's been pretty fun learning HTML and CSS with bits of JavaScript. I'm still a novice when it comes to frameworks, 
-                    but I'd say utilized Astro and Tailwind CSS to a successful degree. The source code is linked 
-                    <a id="github-repo" href="https://github.com/Reaper3629/Reaper3629.github.io">here</a> and below, and I do recommend 
-                    people try making their own websites. It gives you a better idea of how other websites are structured and provides a 
-                    platform to constantly iterate on and watch develop. As of writing this, I know it's a bit simplistic, but I am excited to 
-                    explore other avenues of website development and see how I can update this site! </p>
-                </div>
-            </div>
+  <body>
+    <div slot="main" id="frame-div">
+      <div id="main-div" class="m-0 p-0">
+        <div id="textblock-div">
+          <h1 id="header-tag">Projects ⚙️</h1>
+          <p>
+            Entering university, I would need to be prepared for the new challenges and projects I
+            would encounter. So, I thought it would be a fun venture to learn how to make a website
+            to track and document the projects I want to do. I was also inspired to start this after
+            seeing how amazing my friend
+            <a id="miguel-tag" href="https://github.com/Kaweees">Miguel VF</a>'s
+            <a id="miguel-tag" href="https://miguelvf.dev/">website</a> looked!
+          </p>
         </div>
-    </body>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">GOATLAB 🐐</h1>
+          <div class="flex justify-between italic">
+            <h3>Electronics Lead</h3>
+            <h3>Sept. 2024 - Present</h3>
+          </div>
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <!--
+              First gallery on the page: `prioritizeFirstSlide` marks slide 1 as the likely LCP
+              image (eager load + high fetch priority). Other galleries omit it so every image there
+              stays lazy until the visitor scrolls near it.
+            -->
+            <ProjectSlider slides={goatlabHighlightSlides} prioritizeFirstSlide />
+          </section>
+          <div>
+            <p class="flex justify-center items-center my-2 italic">
+              Cage running a simulation below!
+            </p>
+            <!--
+              preload="none" — do not download video data (beyond minimal metadata) until the user
+              actually wants playback. That keeps large MP4s from competing with hero images during
+              first load. (`preload="metadata"` would still fetch more than you need for below-fold clips.)
+            -->
+            <video controls preload="none">
+              <source src="/projects/IrishSat/cage_video.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Fall 2025 Drone Research</h1>
+          <div class="flex justify-between italic">
+            <h3></h3>
+            <h3>Aug. 2025 - Present</h3>
+          </div>
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={droneResearchSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">CREATE Newsletter 🫱🏽‍🫲🏼</h1>
+          <div class="flex justify-between italic">
+            <h3>Co-Author</h3>
+            <h3>Sept. 2025 - Present</h3>
+          </div>
+          <section id="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Scroll through a template of an Newsletter!
+            </p>
+            <iframe
+              src="/test.html"
+              class="w-full h-[500px] border rounded-xl shadow"
+            ></iframe>
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Summer Projects ☀️ - Hardware-Accelerated Human Activity Classifier</h1>
+          <div class="flex justify-between italic">
+            <h3></h3>
+            <h3>May. 2025 - Aug. 2025</h3>
+          </div>
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={summerClassifierSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Summer Projects ☀️ - MCU Data Logger 2 & 4 Layer PCB</h1>
+          <div class="flex justify-between italic">
+            <h3></h3>
+            <h3>May. 2025 - Present</h3>
+          </div>
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={summerPcbSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Summer Projects ☀️ - Live Sensor Data Visualization System</h1>
+          <div class="flex justify-between italic">
+            <h3></h3>
+            <h3>May. 2025</h3>
+          </div>
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={summerMpu9250Slides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Summer Projects ☀️ - Gravity Simulator in C++ using OpenGL</h1>
+          <div class="flex justify-between italic">
+            <h3></h3>
+            <h3>May. 2025 - Aug. 2025</h3>
+          </div>
+          <div>
+            <video controls preload="none">
+              <source src="/projects/temp/twoBodiesInOrbit.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div>
+            <video controls preload="none">
+              <source src="/projects/temp/fourBodiesInOrbit.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p>Work in Progress ...</p>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">IrishSat - Goatlab 🍀</h1>
+          <div class="flex justify-between italic">
+            <h3>Electronics Lead</h3>
+            <h3>Aug. 2024 - Present</h3>
+          </div>
+          <p>
+            IrishSat's Helmholtz Cage project has been a defining experience in my journey, providing
+            hands-on opportunities to integrate hardware and software in real-world applications.
+            Collaborating with a dedicated team, I developed a Python program to process serial data
+            from a magnetometer and Arduino, enabling seamless conversion of magnetic vector readings
+            into MATLAB-readable files. Under expert mentorship, I honed my skills in KiCad, MATLAB,
+            and Raspberry Pi, contributing to iterative improvements in our Helmholtz Cage design.
+            Taking ownership of circuit optimization, I designed a custom Arduino R3 hat PCB to
+            compact circuits, carefully selecting components and managing footprints. Pair
+            programming allowed me to support the final magnetometer driver programming, while I
+            also designed a Python GUI to interface with a Raspberry Pi, enabling manual and
+            PID-controlled magnetic field adjustments and visualizing dynamic field-time graphs.
+          </p>
+          <p>
+            This project has reinforced my passion for interdisciplinary problem-solving and has
+            inspired future goals, such as implementing PySol for coordinate-based field simulation and
+            enhancing our PCB and GUI designs.
+          </p>
+          <div class="flex flex-wrap justify-evenly break-words my-2">
+            <div class="indent-8 w-full sm:w-1/2">
+              <h3>Githubs:</h3>
+              <ul>
+                {
+                  irishsat_github.map((github) => (
+                    <li class="indent-16">
+                      <a
+                        id="github-repo"
+                        href={github.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {github.name}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div class="indent-8 w-full sm:w-1/2">
+              <h3>Key Skills:</h3>
+              <ul>
+                {irishsat_skills.map((skill) => <li class="indent-16">{skill}</li>)}
+              </ul>
+            </div>
+          </div>
+
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={irishSatDetailSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Robotic Football Club 🏈</h1>
+          <div class="flex justify-between italic">
+            <h3>Electronics Team</h3>
+            <h3>Aug. 2024 - May. 2025</h3>
+          </div>
+          <p>
+            My involvement in robotic football in freshmen year focused mainly on practical
+            application and skill development. I honed my soldering skills working on LED strips and
+            took on the reconstructing the Pi Hat PCB that connects the Raspberry Pi and power the
+            smaller electronics. This involved bringing the design to Git and creating and correcting
+            the generated Bill of Materials (BOM) and Component Placement List files from KiCad.
+            These files were then successfully exported for JLCPCB manufacturing, ensuring the
+            accurate production of our component
+          </p>
+
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={rfcSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">VEX Robotics 🤖</h1>
+          <div class="flex justify-between italic">
+            <h3>Team Captin</h3>
+            <h3>Aug. 2021 -Oct. 2023</h3>
+          </div>
+          <p>
+            VEX Robotics has been the most significant influence in my decision to pursue engineering.
+            As a member of Team 687B Nerd Herd, I gained my first exposure to a STEM curriculum.
+            Starting on the mechanical team, I learned the engineering design process, used CAD
+            software like Fusion 360, and honed my skills in mechanical assembly.
+          </p>
+          <p>
+            Over time, I was promoted to team captain, where I co-led a group of 12 members. Together
+            with my co-captain, I organized team meetings, tracked participation, and drove continuous
+            improvements in our designs and code to compete at a high level.
+          </p>
+
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={vexSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">MIT InvenTeam 🦞</h1>
+          <div class="flex justify-between italic">
+            <h3>Mechanical Team</h3>
+            <h3>Aug. 2022 - Nov. 2023</h3>
+          </div>
+
+          <p>
+            Although it was a smaller commitment, the MIT InvenTeam revolutionized how I viewed
+            engineering. We identified a problem within the community, isolated possible solutions, and
+            received real feedback from our customer base. Working with a team of 15, we drafted a
+            winning proposal and secured a $7,500 grant as one of ten selected teams, focusing on
+            design solutions for larger urban and tourist areas in my hometown. Furthermore, I
+            practiced my Fusion 360 skills for the design and stress testing of critical Smart Walker
+            components, including the frame, seat, and handles. I experienced firsthand the
+            iterative prototyping of a product to refine the Smart Walker for presentation at the
+            2023 Lemelson-MIT EurekaFest.
+          </p>
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={invenTeamSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Engineering Design & Development 🔧</h1>
+          <div class="flex justify-between italic">
+            <h3>Electronics Team</h3>
+            <h3>Aug. 2023 - Jun. 2024</h3>
+          </div>
+          <a
+            class="flex text-center justify-center"
+            id="github-repo"
+            href="https://www.youtube.com/watch?v=zvDc4tibHWs"
+          >
+            Watch the demonstration here!
+          </a>
+          <p>
+            For my engineering design project class, we were tasked with designing and building a
+            semi-autonomous suite of robotic mechanisms for use in exploring hazardous environments.
+            To approach this, we broke the problem down into multiple components, and I joined the
+            module group. In this group, I worked on the electrical aspects of the modules, where I
+            learned soldering. For the actual modules, we decided to use an ESP-32 microcontroller
+            with high-torque micro gear motors. We also included other components, such as a magnetic
+            encoder, MOSFETs, and a TB6612FNG dual motor driver carrier.
+          </p>
+          <section class="container">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <ProjectSlider slides={eddSlides} />
+          </section>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">CARPA Racing Team 🏎️</h1>
+          <div class="flex justify-between italic">
+            <h3>Pit Crew</h3>
+            <h3>Jan. 2024 - May. 2024</h3>
+          </div>
+          <p>
+            The CARPA Racing Team is a branch of the Engineering Design Class, where we had the
+            opportunity to work on a race car designed for energy efficiency. However, safety was our
+            highest priority, so we avoided making drastic measures to reduce weight.
+          </p>
+
+          <p>
+            In this project, we replaced and maintained the race cars from previous years. I had the
+            opportunity to learn about the car's circuitry and connect various components. We also
+            utilized LiFe batteries. By physically replacing the disk brakes and motors, we were able
+            to reduce the heat generated during prolonged use, ultimately increasing electric
+            efficiency.
+          </p>
+
+          <div class="break-words">
+            <p class="flex justify-center items-center my-2 italic">
+              Swipe through the slides below to see highlights!
+            </p>
+            <section class="container">
+              <ProjectSlider slides={carpaSlides} />
+            </section>
+          </div>
+        </div>
+
+        <div id="textblock-div">
+          <h1 id="header-tag">Portfolio Website 💻</h1>
+          <div class="flex justify-between italic">
+            <h3>Developer</h3>
+            <h3>Jul. 2024 - Present</h3>
+          </div>
+          <p>
+            This is my most recent project (at the time of writing this). Regardless, it is my first
+            actual software project, and in all honesty, it's been pretty fun learning HTML and CSS
+            with bits of JavaScript. I'm still a novice when it comes to frameworks, but I'd say
+            utilized Astro and Tailwind CSS to a successful degree. The source code is linked
+            <a id="github-repo" href="https://github.com/Reaper3629/Reaper3629.github.io">here</a> and
+            below, and I do recommend people try making their own websites. It gives you a better idea
+            of how other websites are structured and provides a platform to constantly iterate on and
+            watch develop. As of writing this, I know it's a bit simplistic, but I am excited to explore
+            other avenues of website development and see how I can update this site!
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </Layout>
 
 <style>
-    .container {
-        margin: 0 auto;
-    }
-    .slider-wrapper{
-        position: relative;
-        max-width: 48rem;
-        margin: 0 auto;
-    }
-    .slider{
-        display: flex;
-        aspect-ratio: 16/9;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-        border-radius: 0.5rem;
-    }
-    .slider img {
-        flex: 1 0 100%;
-        scroll-snap-align: start;
-        object-fit:contain;
-    }
-    .slider-nav {
-        display: flex;
-        column-gap: 1rem;
-        position: absolute;
-        bottom: 1.25rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-    }
-    .slider-nav a {
-        width: 0.5rem;
-        height: 0.5rem;
-        border-radius: 50%;
-        background-color: #fff;
-        opacity: 0.75;
-        transition: opacity ease 250ms;
-    }
-    .slider-nav a:hover{
-       opacity: 1; 
-    }
+  .container {
+    margin: 0 auto;
+  }
 </style>

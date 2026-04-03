@@ -21,7 +21,7 @@ export const coursework: Semester[] = [
     courses: [
       { code: 'CSE 30341', name: 'Operating System Principles' },
       { code: 'CSE 30342', name: 'Digital Integrated Circuits' },
-      { code: 'CSE 30264', name: 'Computer Networks' },
+      { code: 'CSE 30321', name: 'Computer Architecture' },
       { code: 'EE 30132', name: 'Applied Embedded System Design' },
       { code: 'EE 30122', name: 'Systems Theory and Applications' },
       { code: 'MATH 30650', name: 'Differential Equations',  minor: 'math' },
