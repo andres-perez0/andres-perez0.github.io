@@ -16,7 +16,7 @@ export const coursework: Semester[] = [
   {
     term: 'Fall',
     year: 2026,
-    credits: 18,
+    credits: 17,
     projected: true,
     courses: [
       { code: 'CSE 30341', name: 'Operating System Principles' },
@@ -24,7 +24,8 @@ export const coursework: Semester[] = [
       { code: 'CSE 30321', name: 'Computer Architecture' },
       { code: 'EE 30132', name: 'Applied Embedded System Design' },
       { code: 'EE 30122', name: 'Systems Theory and Applications' },
-      { code: 'MATH 30650', name: 'Differential Equations',  minor: 'math' },
+      { code: 'EE 48499', name: 'Undergraduate Research'}
+      // { code: 'MATH 30650', name: 'Differential Equations',  minor: 'math' },
     ],
   },
   {
@@ -93,6 +94,6 @@ export const coursework: Semester[] = [
 
 export const minorProgress = {
   // ecp: { current: 2, total: 5, name: 'Engineering Cooperate Practice Minor' },
-  math: { current: 3, total: 5, name: 'Mathematics Minor' },
+  math: { current: 2, total: 5, name: 'Mathematics Minor' },
 };
 
