@@ -14,18 +14,31 @@ export interface Semester {
 
 export const coursework: Semester[] = [
   {
+    term: 'Spring',
+    year: 2027,
+    credits: 18,
+    projected: true,
+    courses: [
+      { code: 'CSE 40243',  name: 'Compilers and Language Design' },
+      { code: 'EE 40025',   name: 'Digital Signal Processing' },
+      { code: 'EE 40024',   name: 'Control Systems' },
+      { code: 'EE 48499',   name: 'Undergraduate Research'},
+      { code: 'ACMS 30440', name: 'Probability and Statisitcs ' },
+      { code: 'THEO 20815', name: 'Jesus Through the Ages' },
+    ],
+  },
+  {
     term: 'Fall',
     year: 2026,
     credits: 17,
-    projected: true,
+    projected: false,
     courses: [
-      { code: 'CSE 30341', name: 'Operating System Principles' },
-      { code: 'CSE 30342', name: 'Digital Integrated Circuits' },
-      { code: 'CSE 30321', name: 'Computer Architecture' },
-      { code: 'EE 30132', name: 'Applied Embedded System Design' },
-      { code: 'EE 30122', name: 'Systems Theory and Applications' },
-      { code: 'EE 48499', name: 'Undergraduate Research'}
-      // { code: 'MATH 30650', name: 'Differential Equations',  minor: 'math' },
+      { code: 'CSE 30341',  name: 'Operating System Principles' },
+      { code: 'CSE 30342',  name: 'Digital Integrated Circuits' },
+      { code: 'CSE 30321',  name: 'Computer Architecture' },
+      { code: 'EE 30132',   name: 'Applied Embedded System Design' },
+      { code: 'EE 30122',   name: 'Systems Theory and Applications' },
+      { code: 'EE 48499',   name: 'Undergraduate Research'}
     ],
   },
   {
@@ -34,12 +47,12 @@ export const coursework: Semester[] = [
     credits: 19,
     projected: false,
     courses: [
-      { code: 'CSE 20289', name: 'System Programming' },
-      { code: 'CSE 20222', name: 'Logic and Processor Design' },
-      { code: 'CSE 30124', name: 'Introduction to Artifical Intelligence' },
-      { code: 'EE 20221', name: 'Signals and Information Systems' },
-      { code: 'EE 20231', name: 'Digital Design for Smart Interconnected Systems' },
-      { code: 'EE 20241', name: 'Electronic Devices & Systems' },
+      { code: 'CSE 20289',  name: 'System Programming' },
+      { code: 'CSE 20222',  name: 'Logic and Processor Design' },
+      { code: 'CSE 30124',  name: 'Introduction to Artifical Intelligence' },
+      { code: 'EE 20221',   name: 'Signals and Information Systems' },
+      { code: 'EE 20231',   name: 'Digital Design for Smart Interconnected Systems' },
+      { code: 'EE 20241',   name: 'Electronic Devices & Systems' },
     ],
   },
   {
@@ -47,12 +60,12 @@ export const coursework: Semester[] = [
     year: 2025,
     credits: 18,
     courses: [
-      { code: 'CSE 20110', name: 'Discrete Mathematics', minor: 'math' },
-      { code: 'CSE 20312', name: 'Data Structures' },
-      { code: 'EE 20100', name: 'Introduction to ECE' },
-      { code: 'EE 28499', name: 'Undergraduate Research' },
-      { code: 'Math 20580', name: 'Linear Algebra & Differential Equations', minor: 'math' },
-      { code: 'Phys 10320', name: 'Engineering Physics II: Electromagnetism' },
+      { code: 'CSE 20110',  name: 'Discrete Mathematics'}, //, minor: 'math' 
+      { code: 'CSE 20312',  name: 'Data Structures' },
+      { code: 'EE 20100',   name: 'Introduction to ECE' },
+      { code: 'EE 28499',   name: 'Undergraduate Research' },
+      { code: 'MATH 20580', name: 'Linear Algebra & Differential Equations'}, //, minor: 'math' 
+      { code: 'PHYS 10320', name: 'Engineering Physics II: Electromagnetism' },
     ],
   },
   {
@@ -60,8 +73,8 @@ export const coursework: Semester[] = [
     year: 2025,
     credits: 6,
     courses: [
-      { code: 'EG 44421', name: 'Integrated Engineering and Business Fundamentals'}, //, minor: 'ecp' 
-      { code: 'EG 34001', name: 'Exploring Engineering Feats of London' },
+      { code: 'EG 44421',   name: 'Integrated Engineering and Business Fundamentals'}, //, minor: 'ecp' 
+      { code: 'EG 34001',   name: 'Exploring Engineering Feats of London' },
     ],
   },
   {
@@ -69,12 +82,12 @@ export const coursework: Semester[] = [
     year: 2025,
     credits: 19,
     courses: [
-      { code: 'CSE 20311', name: 'Fundamentals of Computing' },
-      { code: 'EE 10200', name: 'Introduction to Embedded Systems' },
-      { code: 'FYS 10102', name: 'Moreau First Year Experience' },
-      { code: 'Math 10560', name: 'Calculus II' },
-      { code: 'Phys 10310', name: 'Engineering: Phys I: Mechanics' },
-      { code: 'RU 13186', name: 'Usem Literature: The Anti-Empire Empire: Russia, Center, and Periphery' },
+      { code: 'CSE 20311',  name: 'Fundamentals of Computing' },
+      { code: 'EE 10200',   name: 'Introduction to Embedded Systems' },
+      { code: 'FYS 10102',  name: 'Moreau First Year Experience' },
+      { code: 'MATH 10560', name: 'Calculus II' },
+      { code: 'PHYS 10310', name: 'Engineering: Phys I: Mechanics' },
+      { code: 'RU 13186',   name: 'Usem Literature: The Anti-Empire Empire: Russia, Center, and Periphery' },
     ],
   },
   {
@@ -84,16 +97,15 @@ export const coursework: Semester[] = [
     courses: [
       { code: 'CHEN 10171', name: 'Introduction to Chemical Principles' },
       { code: 'ECON 10010', name: 'Principles of Microeconomics'}, // , minor: 'ecp' 
-      { code: 'EG 10117', name: 'Engineering Design' },
-      { code: 'FYS 10101', name: 'Moreau First Year Experience' },
-      { code: 'Math 10550', name: 'Calculus I' },
+      { code: 'EG 10117',   name: 'Engineering Design' },
+      { code: 'FYS 10101',  name: 'Moreau First Year Experience' },
+      { code: 'MATH 10550', name: 'Calculus I' },
       { code: 'THEO 10001', name: 'Foundations of Theology: Biblical/Historical' },
     ],
   },
 ];
 
 export const minorProgress = {
-  // ecp: { current: 2, total: 5, name: 'Engineering Cooperate Practice Minor' },
   math: { current: 2, total: 5, name: 'Mathematics Minor' },
 };
 

@@ -6,10 +6,7 @@
         └── Icons           
 */
 
-/* The integration's default injected base.css file */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Default Variables */
 :root {
@@ -151,4 +148,3 @@ p {
     color: var(--accent-color);
     display:inline-block;
     transform: scale(0.9);}
-

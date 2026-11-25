@@ -1,12 +1,16 @@
 import { defineConfig } from 'astro/config';
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from '@tailwindcss/vite';
 import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://Reaper3629.github.io',
-  integrations: [tailwind(), icon()],
+  integrations: [icon()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 
   /**
    * Image pipeline (Sharp when installed): anything imported from `src/assets/` and rendered with

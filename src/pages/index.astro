@@ -8,29 +8,30 @@ import { coursework } from "../data/coursework"
     <div slot="main" id="frame-div">
         <div id="main-div" class="m-0 p-0">
             <div id="textblock-div">
-                <h1 id="header-tag">Hey Welcome! 👋</h1>
-                <p> I'm Andres, a first-generation Mexican-American student at the University of Notre Dame studying Computer Engineering. Born and raised in Long Beach, California, I am the proud son of factory workers and the first in my family to attend college. Because of that, I dedicate myself to becoming a little better every day. I'm interested learning more about embedded system design, FPGAs/RTL design, aerospace, mathematics, and learning anything and everything low-level!
+                <h1 id="header-tag">Hey Everyone! 👋</h1>
+                <p>
+                    I am Andres and I'm a computer engineering student at the University of Notre Dame focused on hardware-software co-design (FPGA, ASIC, & Low-Level System design). Born and raised in Long Beach, California, I am the proud son of factory workers from Mexico, forging my path as a first-generation college student. 
                 </p>
-
+                <p>
+                    I recently interned at NVIDIA as a Hardware Ignite Intern apart of the GPU Infrastructure team, where I worked on tooling for continuous integration systems. I'm excited to return this Summer 2027! And This semester you can find me: 
+                </p>
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-6 mb-4">
                     <div class="flex-1">
-                        <p>Currently, I'm:</p>
                         <ul class="indent-4 list-disc list-inside my-2">
                             <li>
-                                Committing my time to IrishSat as the Electronics Lead for the GOAT 
-                                subteam, where I'm leading development on our Helmholtz cage project
-                                and organzing redesign for a new ground station antenna! 
+                                Modernizing IrishSat Ground Station Antenna & maintaining our Helmholtz
+                                cage project as Electronics Lead for GOAT Lab. 
+                            </li>
+                            <li>
+                                Implementing an AXI4-Stream Switch into an High Speed Data 
+                                acquisition system for the Radio Hound Research Project.
                             </li>
                             <li>
                                 Authoring the CREATE Newsletter for the Center for Career Development 
                                 (If you're an ND Alumni and want to be feature, feel free to reach out!)
                             </li>
-                            <li>
-                                Looking forward to my summer 2026 hardware internship at NVIDIA! 
-                            </li>
                         </ul>
                     </div>
-
                     <div class="w-full md:w-1/3 lg:w-1/4">
                         <img 
                             id="main-image" 
@@ -41,14 +42,12 @@ import { coursework } from "../data/coursework"
                         >
                     </div>
                 </div> 
-                
-                <p> Beyond the classroom, I enjoy working out, playing chess and billiards, and chipping alway at learning Japanese! 
-                    僕の日本語は下手ですが、毎日勉強しています。I love talking about musicals, robotics, space and the following the 
-                    developments in AI! 
+                <p> 
+                    Beyond the classroom, I enjoy calisthenics, chess, and learning Spanish & Japanese. I love talking about musicals, space, and the developments in AI! So feel free to reach out! 
                 </p>
             </div>
 
-            <CourseworkSection semesters={coursework} showMinors={true} />
+            <CourseworkSection semesters={coursework} showMinors={false} />
         </div>
     </div>
 </Layout>
